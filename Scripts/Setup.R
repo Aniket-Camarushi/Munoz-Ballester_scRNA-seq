@@ -2,10 +2,10 @@
 
 setup <- function()
 {
-  pkgs_list <- c("tidyverse", "hdf5r", "ggpubr", "Seurat", "enrichR", "cowplot", "patchwork", "VennDiagram")
+  pkgs_list <- c("tidyverse", "hdf5r", "ggpubr", "Seurat", "enrichR", "cowplot", "patchwork", "VennDiagram", "glue", "dplyr", "rafalib")
   install.packages(pkgs_list[! pkgs_list %in% rownames(installed.packages())])
   
-  bioc_pkgs <- c("limma", "org.Hs.eg.db", "celldex", "SingleR", "SingleCellExperiment", "viridis")
+  bioc_pkgs <- c("limma", "org.Hs.eg.db", "celldex", "SingleR", "SingleCellExperiment", "viridis", "CellChat")
   bioc2install <- bioc_pkgs[! bioc_pkgs %in% rownames(installed.packages())]
   
   if (length(bioc2install) > 0) 
@@ -28,7 +28,6 @@ setup <- function()
   library(VennDiagram)
   library(org.Hs.eg.db)
   library(SingleCellExperiment)
-  library(celldex)
   library(viridis)
   library(glue)
   library(dplyr)
