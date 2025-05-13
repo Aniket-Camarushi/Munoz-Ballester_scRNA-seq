@@ -22,7 +22,7 @@ if (!dir.exists("../Data/10k_Adult_Mouse_Brain/"))
 
 # Reading raw data
 raw.data <- Read10X("../Data/10k_Adult_Mouse_Brain/sample_filtered_feature_bc_matrix/")
-  raw.data <- CreateSeuratObject(raw.data)
+raw.data <- CreateSeuratObject(raw.data)
 
 # QC
 # For brain cells, use the pattern "^mt-" which is lowercase
