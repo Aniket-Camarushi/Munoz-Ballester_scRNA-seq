@@ -1,26 +1,3 @@
-# Munoz-Ballester_scRNA-seq
-
-Below is the current README from my [NGS Pipeline Project](https://github.com/Aniket-Camarushi/NGS_Pipeline/tree/05.13.25).
-
-*A modular workflow for academic NGS analysis (FASTQ → VCF)*  
-**Developer**: Aniket Camarushi | UMBC Bioinformatics & Computational Biology '26  
-
-## Overview
-This pipeline was developed during my undergraduate research to:
-- Process small batches of RNA-seq data (10-15 samples)  
-- Demonstrate core NGS workflow principles (STAR alignment → GATK variant calling)  
-- Automate QC reporting with MultiQC
-
-## Key Features
-| Module       | Purpose                          | Status       |
-|--------------|----------------------------------|--------------|
-| FastQC       | Raw read quality control         | Stable       |
-| STAR         | Genome alignment                 | Functional*  |
-| GATK         | Variant calling                  | In refinement|
-| MultiQC      | Consolidated QC reporting        | Production-ready |
-
-*\*Some edge cases being optimized for larger datasets*
-
 ## Data Availability
 
 ### Datasets:
@@ -76,29 +53,3 @@ wget https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0
 wget https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0/1000G_phase1.snps.high_confidence.hg38.vcf.gz -P ./Data/
 wget https://storage.googleapis.com/genomics-public-data/resources/broad/hg38/v0/1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi -P ./Data/
 ```
-
-
-## Dependencies
-```bash
-conda create -n rna_seq_pipeline -c bioconda -c conda-forge \
-    fastqc \
-    kallisto \
-    multiqc \
-    star \
-    samtools \
-    gatk4 \
-    picard \
-    bcftools \
-    trimmomatic \
-    snpeff \
-    openssl=1.0  # Needed for some older GATK tools
-
-conda activate rna_seq_pipeline
-```
-
-## How to Use
-```bash
-# For academic/learning purposes only
-./run_pipeline.sh
-```
-
